@@ -123,6 +123,7 @@
                       <artifactId>scala-continuations-plugin_${scala.binary.version}</artifactId>
                       <type>jar</type>
                       <destFileName>scala-continuations-plugin.jar</destFileName>
+                      <outputDirectory>${project.build.directory}/lib/</outputDirectory>
                     </artifactItem>
                     <artifactItem>
                       <groupId>org.scala-lang.plugins</groupId>
