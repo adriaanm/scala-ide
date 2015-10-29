@@ -614,15 +614,7 @@
             <args>
               <arg>-feature</arg>
               <arg>-unchecked</arg>
-              <arg>-deprecation</arg>
               <arg>-language:_</arg>
-              <arg>-Xlint</arg>
-              <arg>-Xfuture</arg>
-              <arg>-Xfatal-warnings</arg>
-              <arg>-Yno-adapted-args</arg>
-              <arg>-Ywarn-dead-code</arg>
-              <arg>-Ywarn-unused-import</arg>
-              <arg>-Ywarn-unused</arg>
             </args>
           </configuration>
         </plugin>
