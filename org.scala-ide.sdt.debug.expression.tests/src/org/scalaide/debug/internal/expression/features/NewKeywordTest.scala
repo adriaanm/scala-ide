@@ -51,12 +51,12 @@ class NewKeywordTest extends BaseIntegrationTest(NewKeywordTest) {
     eval("new LibClassWithVararg(1, 2)", "LibClassWithVararg(List(1, 2))", "debug.LibClassWithVararg")
   }
 
-  @Test
-  def javaVarArgConstructor(): Unit = {
-    eval("new JavaVarArg()", "JavaVarArg([])", "debug.JavaVarArg")
-    eval("new JavaVarArg(1)", "JavaVarArg([1])", "debug.JavaVarArg")
-    eval("new JavaVarArg(1, 2)", "JavaVarArg([1, 2])", "debug.JavaVarArg")
-  }
+  // @Test
+  // def javaVarArgConstructor(): Unit = {
+  //   eval("new JavaVarArg()", "JavaVarArg([])", "debug.JavaVarArg")
+  //   eval("new JavaVarArg(1)", "JavaVarArg([1])", "debug.JavaVarArg")
+  //   eval("new JavaVarArg(1, 2)", "JavaVarArg([1, 2])", "debug.JavaVarArg")
+  // }
 
   @Test
   def nestedInstantiatedClassField(): Unit =
