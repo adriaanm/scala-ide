@@ -222,34 +222,34 @@ class PresentationCompilerActivityListenerTest {
     listener.stop()
   }
 
-  @Test
-  def changingManyPreferencesAtOnce(): Unit = FlakyTest.retry("changingManyPreferencesAtOnce") {
-    val shutdownMock = new MockShutdownFun
-
-    val listener = createListener(shutdownMock, maxIdlenessLengthMillis = valuesForAnotherCalls(50000, 20, 50000), hasOpenEditors = false,
-      closingEnabled = valuesForAnotherCalls( /*start*/ true, /*first change*/ false, /*second change*/ true))
-
-    listener.start()
-    sleep(40)
-
-    // first change:
-    // decrease max length to lower than current inactivity duration but disable closing
-    listener.firePropertyChangeEvent()
-    sleep(20)
-
-    shutdownMock mustHaveNumberOfInvocationsEqual 0
-
-    listener.noteActivity()
-
-    // second change:
-    // enable closing but increase max length
-    listener.firePropertyChangeEvent()
-    sleep(20)
-
-    shutdownMock mustHaveNumberOfInvocationsEqual 0
-
-    listener.stop()
-  }
+  // @Test
+  // def changingManyPreferencesAtOnce(): Unit = FlakyTest.retry("changingManyPreferencesAtOnce") {
+  //   val shutdownMock = new MockShutdownFun
+  //
+  //   val listener = createListener(shutdownMock, maxIdlenessLengthMillis = valuesForAnotherCalls(50000, 20, 50000), hasOpenEditors = false,
+  //     closingEnabled = valuesForAnotherCalls( /*start*/ true, /*first change*/ false, /*second change*/ true))
+  //
+  //   listener.start()
+  //   sleep(40)
+  //
+  //   // first change:
+  //   // decrease max length to lower than current inactivity duration but disable closing
+  //   listener.firePropertyChangeEvent()
+  //   sleep(20)
+  //
+  //   shutdownMock mustHaveNumberOfInvocationsEqual 0
+  //
+  //   listener.noteActivity()
+  //
+  //   // second change:
+  //   // enable closing but increase max length
+  //   listener.firePropertyChangeEvent()
+  //   sleep(20)
+  //
+  //   shutdownMock mustHaveNumberOfInvocationsEqual 0
+  //
+  //   listener.stop()
+  // }
 
   @Test
   def ignoreOtherEvents(): Unit = {
